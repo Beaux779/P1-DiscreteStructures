@@ -6,6 +6,20 @@ using namespace std;
 int imp(int a,int b){ return (!a || b) ? 1 : 0;}   // a implies b
 int iff(int a,int b){ return (a == b)? 1 : 0;}   // a if and only if b
 
+static void printHeader(){
+    cout << "----------------------------------" << endl;
+    cout << "Name: Beaux Dolf, Jacob Simon" << endl;
+    cout << "Course: DS 2025" << endl;
+    cout << "Project: P1_a.cpp" << endl;
+    cout << "Due Date: 01/29/2024" << endl;
+    cout << "----------------------------------" << endl;
+    cout << endl;
+}
+static void printVerdict(const char* name, int trues, int total){
+    cout << "The amount of true cases are " << trues << endl;
+    cout << name << "is a " << (trues ==0 ? "contradiction." : (trues == total ? "tautology." : "contingency.")) << endl;
+    cout << endl;
+}
 int main(){
 
 
@@ -21,19 +35,9 @@ int main(){
             totalCases1++;
         }
     }
+    printVerdict("Expression 1 ", trueCount1, totalCases1);
 
-    cout << "The amount of true cases are " << trueCount1 << endl;
-    if(trueCount1 == 0)
-        cout << "Expression 1 is a contradiction." << endl;
-    else if(trueCount1 == totalCases1)
-        cout << "Expression 1 is a tautology." << endl;
-    else
-        cout << "Expression 1 is a contingency." << endl;
-    cout << endl;
-
-
-    //expression 2
-    // (p <-> q) -> (p <-> q)  (tautology)
+    //expression 2: (p <-> q) -> (p <-> q)  (tautology)
     cout << "Check truth value for: Expression 2" << endl;
     cout << "p q p<->q expr2\n";
     int trueCount2 = 0, totalCases2 = 0;
@@ -46,18 +50,10 @@ int main(){
             totalCases2++; 
         }
     }
-    cout << "The amount of true cases are " << trueCount2 << endl;
-    if(trueCount2 == 0)
-        cout << "Expression 2 is a contradiction." << endl;
-    else if(trueCount2 == totalCases2)
-        cout << "Expression 2 is a tautology." << endl;
-    else
-        cout << "Expression 2 is a contingency." << endl;
+    printVerdict("Expression 2 ", trueCount2, totalCases2);
    
-
     //expression 3
     cout << "Check truth value for: Expression 3" << endl;
-
     int trueCount3 = 0, totalCases3 = 0;
     for(int p = 0; p <= 1; p++) {
         for(int q = 0; q <= 1; q++) {
@@ -71,21 +67,10 @@ int main(){
             }
         }
     }
-
-
-    cout << "The amount of true cases are " << trueCount3 << endl;
-    if(trueCount3 == 0)
-        cout << "Expression 3 is a contradiction." << endl;
-    else if(trueCount3 == totalCases3)
-        cout << "Expression 3 is a tautology." << endl;
-    else
-        cout << "Expression 3 is a contingency." << endl;
-    cout << endl;
-    
+    printVerdict("Expression 3 ", trueCount3, totalCases3);
 
     //expression 4
     cout << "Check truth value for: Expression 4" << endl;
-
     int trueCount = 0; int totalCases = 0;
     for (int p = 0; p <= 1; p++) {
         for (int q = 0; q <= 1; q++) {
@@ -97,16 +82,7 @@ int main(){
             }
         }
     }
-
-    cout << "The amount of true cases are " << trueCount << endl;
-    if(trueCount == 0)
-        cout << "Expression 4 is a contradiction." << endl;
-    else if(trueCount == totalCases)
-        cout << "Expression 4 is a tautology." << endl;
-    else
-        cout << "Expression 4 is a contingency." << endl;
-    cout << endl;
+    printVerdict("Expression 4 ", trueCount, totalCases); 
     
-
     return 0;
 }
