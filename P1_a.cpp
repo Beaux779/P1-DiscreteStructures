@@ -3,15 +3,14 @@
 
 using namespace std;
 
-bool imp(bool a,bool b);   // a implies b
-bool iff(bool a,bool b);   // a if and only if b
-bool xor2(bool a,bool b);  // a exclusive or b
+int imp(int a,int b);   // a implies b
+int iff(int a,int b);   // a if and only if b
+int xor2(int a,int b);  // a exclusive or b
 void printHeader();
-void printRow(bool p, bool q, bool r);
+void printRow(int p, int q, int r);
 void printSummary();
 
 int main(){
-    bool p, q, r;
 
     cout << "Check truth value for: Expression 1" << endl;
 
@@ -65,12 +64,12 @@ int main(){
     return 0;
 }
 
-bool imp(bool a, bool b){ // a implies b
-    return (a == true && b == false) ? false : true;
+int imp(int a, int b){ // a implies b
+    return (!a || b) ? 1 : 0;
 }
-bool iff(bool a, bool b){ // a if and only if b
-    return (a == b)? true : false;
+int iff(int a, int b){ // a if and only if b
+    return (a == b)? 1 : 0;
 }
-bool xor2(bool a, bool b){ // a exclusive or b
-    return (a != b)? true : false;
+int xor2(int a, int b){ // a exclusive or b
+    return (a != b)? 1 : 0;
 }
