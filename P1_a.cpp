@@ -6,15 +6,6 @@ using namespace std;
 int imp(int a,int b){ return (!a || b) ? 1 : 0;}   // a implies b
 int iff(int a,int b){ return (a == b)? 1 : 0;}   // a if and only if b
 
-static void printHeader(){
-    cout << "----------------------------------" << endl;
-    cout << "Name: Beaux Dolf, Jacob Simon" << endl;
-    cout << "Course: DS 2025" << endl;
-    cout << "Project: P1_a.cpp" << endl;
-    cout << "Due Date: 01/29/2024" << endl;
-    cout << "----------------------------------" << endl;
-    cout << endl;
-}
 static void printVerdict(const char* name, int trues, int total){
     cout << "The amount of true cases are " << trues << endl;
     cout << name << "is a " << (trues ==0 ? "contradiction." : (trues == total ? "tautology." : "contingency.")) << endl;
@@ -83,6 +74,6 @@ int main(){
         }
     }
     printVerdict("Expression 4 ", trueCount, totalCases); 
-    
+
     return 0;
 }
