@@ -5,10 +5,6 @@ using namespace std;
 
 int imp(int a,int b);   // a implies b
 int iff(int a,int b);   // a if and only if b
-int xor2(int a,int b);  // a exclusive or b
-void printHeader();
-void printRow(int p, int q, int r);
-void printSummary();
 
 int main(){
 
@@ -120,7 +116,4 @@ int imp(int a, int b){ // a implies b
 }
 int iff(int a, int b){ // a if and only if b
     return (a == b)? 1 : 0;
-}
-int xor2(int a, int b){ // a exclusive or b
-    return (a != b)? 1 : 0;
 }
