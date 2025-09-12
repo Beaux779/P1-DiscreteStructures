@@ -41,5 +41,5 @@ The program:
 
 ### Using g++
 ```bash
-g++ -std=c++17 main.cpp -o truth_tables
-./truth_tables
+g++ -std=c++17 P1_a.cpp -o P1_a.exe
+.\P1_a.exe
