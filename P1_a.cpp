@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int imp(int a,int b);   // a implies b
-int iff(int a,int b);   // a if and only if b
+int imp(int a,int b){ return (!a || b) ? 1 : 0;}   // a implies b
+int iff(int a,int b){ return (a == b)? 1 : 0;}   // a if and only if b
 
 int main(){
 
@@ -109,11 +109,4 @@ int main(){
     
 
     return 0;
-}
-
-int imp(int a, int b){ // a implies b
-    return (!a || b) ? 1 : 0;
-}
-int iff(int a, int b){ // a if and only if b
-    return (a == b)? 1 : 0;
 }
